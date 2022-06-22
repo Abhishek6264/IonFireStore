@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title  class="ion-text-center">
+      Movie List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-list class="ios list-ios hydrated">
+      <ion-list-header class="ion-text-center">
+        Movies
+      </ion-list-header>
+      <ion-item *ngFor="let movie of Movies" class="user-list">
+        <ion-label>
+          <h5>
+            <ion-icon name="videocam"></ion-icon> &nbsp;<b>Name: </b> {{movie.name | titlecase}}
+          </h5>
+          <p>
+            <ion-icon name="person"></ion-icon> &nbsp;<b>Actor: </b> {{movie.actor | titlecase}}
+          </p>
+          <p>
+            <ion-icon name="calendar-outline"></ion-icon>&nbsp;<b>Year: </b> {{movie.year}}
+          </p>
+        </ion-label>
+        <div class="item-note" item-end>
+          <button ion-button clear [routerLink]="['/edit-movie-info/', movie.id]">
+            <ion-icon name="create" style="zoom:2.0"></ion-icon>
+          </button>
+          <button ion-button clear (click)="removeMovie(movie.id)">
+            <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+

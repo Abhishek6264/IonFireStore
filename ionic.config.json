@@ -1,0 +1,7 @@
+{
+  "name": "IonicFirestore",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
